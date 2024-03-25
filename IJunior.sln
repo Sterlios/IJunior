@@ -5,8 +5,6 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Napilnik", "Napilnik", "{0C627F9F-BFED-44A1-A437-8F364AD160AC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IJ", "IJ\IJ.csproj", "{05C9BC2A-EB70-4376-9CC9-D464D11E36EC}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6_OOP", "6_OOP", "{79A3688D-CDB6-4DA4-B556-72DCBE4FD7D4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "6_3_PlayersDatabase", "6 OOP\6_3_PlayersDatabase\6_3_PlayersDatabase.csproj", "{F970F764-DE2D-4BB8-AC99-730C5306187C}"
@@ -29,16 +27,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1.4 PaymentSystems", "Napil
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OCP", "Napilnik\OCP\OCP.csproj", "{FC2B629B-9674-4934-90F0-E7FFE80469CE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mentor", "Mentor\Mentor.csproj", "{0D73A3A7-8E77-4F7C-BE79-766E57A8E110}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{05C9BC2A-EB70-4376-9CC9-D464D11E36EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{05C9BC2A-EB70-4376-9CC9-D464D11E36EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{05C9BC2A-EB70-4376-9CC9-D464D11E36EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{05C9BC2A-EB70-4376-9CC9-D464D11E36EC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F970F764-DE2D-4BB8-AC99-730C5306187C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F970F764-DE2D-4BB8-AC99-730C5306187C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F970F764-DE2D-4BB8-AC99-730C5306187C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -79,6 +75,10 @@ Global
 		{FC2B629B-9674-4934-90F0-E7FFE80469CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC2B629B-9674-4934-90F0-E7FFE80469CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC2B629B-9674-4934-90F0-E7FFE80469CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D73A3A7-8E77-4F7C-BE79-766E57A8E110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D73A3A7-8E77-4F7C-BE79-766E57A8E110}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D73A3A7-8E77-4F7C-BE79-766E57A8E110}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D73A3A7-8E77-4F7C-BE79-766E57A8E110}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

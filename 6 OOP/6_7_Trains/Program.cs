@@ -44,13 +44,14 @@
 
         private Train CreateTrain(Direction direction, int tickets)
         {
-            int minCarrigeCapacity = 10;
-            int maxCarrigeCapacity = 20;
+            int minCarrigeCapacity = 30;
+            int maxCarrigeCapacity = 50;
+            int divider = 10;
             List<Carriage> carriages = new List<Carriage>();
 
             while(tickets > 0)
             {
-                Carriage carriage = new Carriage(Utils.GetRandomNumber(minCarrigeCapacity, maxCarrigeCapacity));
+                Carriage carriage = new Carriage(Utils.GetRandomNumber(minCarrigeCapacity / divider, maxCarrigeCapacity / divider) * divider);
                 int filledSeatsCount = Math.Min(carriage.EmptySeatsCount, tickets);
                 carriage.Fill(filledSeatsCount);
                 tickets -= filledSeatsCount;
@@ -62,8 +63,8 @@
 
         private int SellTickets()
         {
-            int minTicketsCount = 40;
-            int maxTicketsCount = 120;
+            int minTicketsCount = 100;
+            int maxTicketsCount = 300;
 
             return Utils.GetRandomNumber(minTicketsCount, maxTicketsCount);
         }
@@ -83,7 +84,7 @@
                 "Саратов",
             };
 
-            string toCity = cities[Utils.GetRandomNumber(0,cities.Count)];
+            string toCity = cities[Utils.GetRandomNumber(0,cities.Count - 1)];
 
             return new Direction(fromCity, toCity);
         }
@@ -169,7 +170,7 @@
         private static readonly Random s_random = new Random();
 
         public static int GetRandomNumber(int min, int max) =>
-            s_random.Next(min, max);
+            s_random.Next(min, max + 1);
 
         public static int ReadNumber()
         {
