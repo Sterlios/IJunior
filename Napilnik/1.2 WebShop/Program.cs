@@ -37,7 +37,7 @@
 
         protected IReadOnlyDictionary<Good, int> Goods => _goods;
 
-        protected void Add(Good good, int count)
+        protected void AddInternal(Good good, int count)
         {
             if (_goods.ContainsKey(good) == false)
                 _goods.Add(good, 0);
@@ -57,7 +57,7 @@
 
             _goods[good] -= count;
 
-            if (_goods[good] > 0 == false)
+            if (_goods[good] <= 0)
                 _goods.Remove(good);
         }
 
@@ -80,11 +80,9 @@
         public Cart(IDeliveryService deliveryService) : base() =>
             _deliveryService = deliveryService ?? throw new ArgumentNullException(nameof(deliveryService));
 
-        public new void Add(Good good, int count)
+        public void Add(Good good, int count)
         {
-            ArgumentNullException.ThrowIfNull(good);
-
-            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(count);
+            ThrowHelper.ValidateData(good, count);
 
             int summaryCount = count;
 
@@ -94,7 +92,7 @@
             if (_deliveryService.HaveEnoughGoods(good, summaryCount) == false)
                 throw new ArgumentOutOfRangeException(nameof(count));
 
-            base.Add(good, count);
+            AddInternal(good, count);
         }
 
         public Order Order()
@@ -106,34 +104,37 @@
         }
     }
 
+    public static class ThrowHelper
+    {
+        public static void ValidateData(Good good, int count)
+        {
+            ArgumentNullException.ThrowIfNull(good);
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(count);
+        }
+    }
+
     public class Warehouse : Storeage, IDeliveryService
     {
         public void Delive(Good good, int count)
         {
-            ArgumentNullException.ThrowIfNull(good);
+            ThrowHelper.ValidateData(good, count);
 
-            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(count);
-
-            Add(good, count);
+            AddInternal(good, count);
         }
 
         public bool HaveEnoughGoods(Good good, int count)
         {
-            ArgumentNullException.ThrowIfNull(good);
-
-            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(count);
+            ThrowHelper.ValidateData(good, count);
 
             if (Goods.ContainsKey(good) == false)
-                throw new ArgumentException(nameof(good));
+                return false;
 
             return Goods[good] >= count;
         }
 
         public void Transfer(Good good, int count)
         {
-            ArgumentNullException.ThrowIfNull(good);
-
-            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(count);
+            ThrowHelper.ValidateData(good, count);
 
             Remove(good, count);
         }
