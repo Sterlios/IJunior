@@ -22,11 +22,11 @@
         if (player == null)
             throw new ArgumentNullException(nameof(player));
 
-        if (CanFire)
-        {
-            player.TakeDamage(_damage);
-            _bulletsCount--;
-        }
+        if (CanFire == false)
+            throw new InvalidOperationException();
+
+        player.TakeDamage(_damage);
+        _bulletsCount--;
     }
 }
 
