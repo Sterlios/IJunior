@@ -93,7 +93,7 @@ public class PaymentSystem2 : IPaymentSystem
     {
         ArgumentNullException.ThrowIfNull(order);
 
-        string hash = _hashGenerator.GetHash(order.Id.ToString());
+        string hash = _hashGenerator.GetHash(order.Id.ToString(), order.Amount.ToString());
 
         return $"order.system2.ru/pay?hash={hash}";
     }
@@ -102,6 +102,7 @@ public class PaymentSystem2 : IPaymentSystem
 public class PaymentSystem3 : IPaymentSystem
 {
     private readonly HashGenerator _hashGenerator;
+    private readonly string _keyWord = "секретный ключ от системы";
 
     public PaymentSystem3(HashGenerator hashGenerator) =>
         _hashGenerator = hashGenerator ?? throw new ArgumentNullException(nameof(hashGenerator));
@@ -110,7 +111,7 @@ public class PaymentSystem3 : IPaymentSystem
     {
         ArgumentNullException.ThrowIfNull(order);
 
-        string hash = _hashGenerator.GetHash(order.Id.ToString());
+        string hash = _hashGenerator.GetHash(order.Id.ToString(), order.Amount.ToString(), _keyWord);
 
         return $"system3.com/pay?amount={order.Amount}&curency={order.Currency.ToString().ToUpper()}&hash={hash}";
     }
