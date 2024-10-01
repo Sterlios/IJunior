@@ -22,10 +22,6 @@ class Program
 
 public class Order
 {
-    public readonly int Id;
-    public readonly int Amount;
-    public readonly Currency Currency;
-
     public Order(int id, int amount, Currency currency)
     {
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(id);
@@ -38,6 +34,10 @@ public class Order
         Amount = amount;
         Currency = currency;
     }
+
+    public int Id { get; }
+    public int Amount { get; }
+    public Currency Currency { get; }
 }
 
 public class HashGenerator
