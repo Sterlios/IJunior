@@ -6,8 +6,6 @@ class Program
     static void Main(string[] args)
     {
         Order order = new Order(268, 12000, Currency.Rub);
-        Order order1 = new Order(268, 50, Currency.Eur);
-        Order order2 = new Order(268, 150, Currency.Usd);
 
         HashGenerator hashGenerator1 = new HashGenerator(MD5.Create());
         HashGenerator hashGenerator2 = new HashGenerator(SHA1.Create());
@@ -19,14 +17,6 @@ class Program
         Console.WriteLine(paymentSystem1.GetPayingLink(order));
         Console.WriteLine(paymentSystem2.GetPayingLink(order));
         Console.WriteLine(paymentSystem3.GetPayingLink(order));
-        Console.WriteLine();
-        Console.WriteLine(paymentSystem1.GetPayingLink(order1));
-        Console.WriteLine(paymentSystem2.GetPayingLink(order1));
-        Console.WriteLine(paymentSystem3.GetPayingLink(order1));
-        Console.WriteLine();
-        Console.WriteLine(paymentSystem1.GetPayingLink(order2));
-        Console.WriteLine(paymentSystem2.GetPayingLink(order2));
-        Console.WriteLine(paymentSystem3.GetPayingLink(order2));
     }
 }
 
