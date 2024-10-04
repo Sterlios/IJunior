@@ -34,6 +34,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1.2 WebShop", "Napilnik\1.2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2.2 PaymentSystems", "Napilnik\2.2 PaymentSystems\2.2 PaymentSystems.csproj", "{3E21E97E-91D4-4D3B-97F6-47E695BEAEEF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVP", "MVP\MVP.csproj", "{72C59800-7F09-48B7-9732-0D56A46A46FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -88,6 +90,10 @@ Global
 		{3E21E97E-91D4-4D3B-97F6-47E695BEAEEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E21E97E-91D4-4D3B-97F6-47E695BEAEEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E21E97E-91D4-4D3B-97F6-47E695BEAEEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72C59800-7F09-48B7-9732-0D56A46A46FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72C59800-7F09-48B7-9732-0D56A46A46FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72C59800-7F09-48B7-9732-0D56A46A46FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72C59800-7F09-48B7-9732-0D56A46A46FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -104,6 +110,7 @@ Global
 		{5081758E-276C-480F-8CC9-8D85D7161C10} = {0C627F9F-BFED-44A1-A437-8F364AD160AC}
 		{F00EE764-AF82-4B96-A1A4-2ACB8AFCCAEF} = {0C627F9F-BFED-44A1-A437-8F364AD160AC}
 		{3E21E97E-91D4-4D3B-97F6-47E695BEAEEF} = {0C627F9F-BFED-44A1-A437-8F364AD160AC}
+		{72C59800-7F09-48B7-9732-0D56A46A46FF} = {0C627F9F-BFED-44A1-A437-8F364AD160AC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7E364445-7E8D-4B60-89C1-6311BACD967D}
